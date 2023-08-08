@@ -1,0 +1,2 @@
+class Shopauth < ApplicationRecord
+end
