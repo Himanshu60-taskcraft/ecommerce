@@ -65,14 +65,6 @@ ActiveRecord::Schema.define(version: 2023_08_07_093117) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "shopauths", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "shopkeeper_categories", force: :cascade do |t|
     t.string "category"
     t.datetime "created_at", precision: 6, null: false
