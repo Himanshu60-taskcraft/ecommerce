@@ -24,6 +24,7 @@ class ProductsController < ApplicationController
     # byebug
     @categ = Categ.find(params[:categ_id])
     @product = @categ.products.create(product_params)
+    # @product.image.attach(params[:product][:image])
     redirect_to categ_url(@categ)
     # @product = Product.new(product_params)
 
@@ -61,6 +62,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :description, :price)
+      params.require(:product).permit(:name, :description, :price, :image)
     end
 end

@@ -1,6 +1,16 @@
 class HomesController < ApplicationController
   before_action :set_home, only: %i[ show edit update destroy ]
 
+
+  def search 
+    if params[:search].blank?
+      redirect_to homes_url and return
+    else 
+      @parameter = params[:search].downcase
+      @results = Product.all.where("lower(name) LIKE :search", search: "%#{@parameter}%")
+    end
+  end
+
   # GET /homes or /homes.json
   def index
     @homes = Home.all

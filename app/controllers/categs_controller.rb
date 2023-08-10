@@ -8,6 +8,7 @@ class CategsController < ApplicationController
 
   # GET /categs/1 or /categs/1.json
   def show
+    # @categ = Categ.find(params[:id])
   end
 
   # GET /categs/new
@@ -60,9 +61,11 @@ class CategsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_categ
+      # byebug
       @categ = Categ.find(params[:id])
     end
 
+  private
     # Only allow a list of trusted parameters through.
     def categ_params
       params.require(:categ).permit(:category)
